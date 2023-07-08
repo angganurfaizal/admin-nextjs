@@ -1,7 +1,7 @@
 import { PropsWithChildren, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import { IRootState } from "./store";
+import { IRootState } from "./src/store";
 import {
   toggleRTL,
   toggleTheme,
@@ -11,7 +11,7 @@ import {
   toggleAnimation,
   toggleNavbar,
   toggleSemidark,
-} from "./store/themeConfigSlice";
+} from "./src/store/themeConfigSlice";
 
 function App({ children }: PropsWithChildren) {
   const themeConfig = useSelector((state: IRootState) => state.themeConfig);
@@ -60,7 +60,7 @@ function App({ children }: PropsWithChildren) {
         themeConfig.menu
       } ${themeConfig.layout} ${
         themeConfig.rtlClass
-      } main-section font-nunito relative text-sm font-normal antialiased`}
+      } main-section relative font-nunito text-sm font-normal antialiased`}
     >
       {children}
     </div>

@@ -16,7 +16,7 @@ const supportedLngs = [
   "tr",
   "zh",
 ];
-import themeConfig from "./src/theme.config";
+import themeConfig from "./theme.config";
 export const ni18nConfig = {
   fallbackLng: [themeConfig.locale || "en"],
   supportedLngs,

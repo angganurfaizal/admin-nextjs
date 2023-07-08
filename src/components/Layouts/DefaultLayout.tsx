@@ -2,7 +2,7 @@ import { IRootState } from "@/store";
 import { toggleSidebar } from "@/store/themeConfigSlice";
 import { PropsWithChildren, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import App from "../../App";
+import App from "../../../App";
 import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
@@ -110,7 +110,7 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
           {showTopButton && (
             <button
               type="button"
-              className="btn btn-outline-primary dark:hover:bg-primary animate-pulse rounded-full bg-[#fafafa] p-2 dark:bg-[#060818]"
+              className="btn btn-outline-primary animate-pulse rounded-full bg-[#fafafa] p-2 dark:bg-[#060818] dark:hover:bg-primary"
               onClick={goToTop}
             >
               <svg
@@ -140,7 +140,7 @@ const DefaultLayout = ({ children }: PropsWithChildren) => {
         <Setting />
         {/* END APP SETTING LAUNCHER */}
         <div
-          className={`${themeConfig.navbar} main-container dark:text-white-dark min-h-screen text-black`}
+          className={`${themeConfig.navbar} main-container min-h-screen text-black dark:text-white-dark`}
         >
           {/* BEGIN SIDEBAR */}
           <Sidebar />
