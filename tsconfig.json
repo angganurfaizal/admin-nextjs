@@ -15,7 +15,17 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@constants": ["src/constants"],
+      "@constants/*": ["src/constants/*"],
+      "@containers": ["src/containers"],
+      "@containers/*": ["src/containers/*"],
+      "@enums": ["src/enums"],
+      "@enums/*": ["src/enums/*"],
+      "@services": ["src/services"],
+      "@services/*": ["src/services/*"],
+      "@interfaces": ["src/interfaces"],
+      "@interfaces/*": ["src/interfaces/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

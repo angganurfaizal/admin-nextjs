@@ -1,13 +1,14 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
+import { IGetPricelistResponse } from "@/interfaces/api/pricelist";
+import { get } from "@/services/http-client";
 
-type Data = {
-  name: string
-}
+const API_PATH = "/v1/pricelist";
+export const getPricelist = async (): Promise<IGetPricelistResponse> => {
+  try {
+    const response = await get<IGetPricelistResponse>(`${API_PATH}`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+};
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
-}
+export default getPricelist;
