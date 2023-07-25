@@ -4,6 +4,7 @@ export type Pricelist = {
   name: string;
   packageDetails: string;
   price: number;
-  status: string;
-  createdAt: string;
+  isActive: string;
+  slug: string;
+  created_at: string;
 };

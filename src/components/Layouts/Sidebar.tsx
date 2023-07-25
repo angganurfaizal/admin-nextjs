@@ -7,6 +7,8 @@ import AnimateHeight from "react-animate-height";
 import { IRootState } from "../../store";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Modal from "../Modal";
+import Input from "../Input";
 
 const Sidebar = () => {
   const router = useRouter();
@@ -279,7 +281,23 @@ const Sidebar = () => {
                       <Link href="/menu/pricelist/list">{t("list")}</Link>
                     </li>
                     <li>
-                      <Link href="/menu/pricelist/add">{t("add")}</Link>
+                      <Modal
+                        title={t("Add Pricelist")}
+                        children={
+                          <>
+                            <Input
+                              type="text"
+                              title={t("Code")}
+                              Inplaceholder="pl00x"
+                            />
+                            <Input
+                              type="text"
+                              title={t("Name")}
+                              Inplaceholder="Paket 1"
+                            />
+                          </>
+                        }
+                      />
                     </li>
                   </ul>
                 </AnimateHeight>
